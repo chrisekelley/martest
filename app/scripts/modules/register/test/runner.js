@@ -37,7 +37,7 @@ require.config({
 });
 
 var specs = [
-    'spec/entities_register.spec.js',
+    'spec/entities.spec.js',
     'spec/list_view.spec.js'
 //    'spec/list_controller.spec.js',
 ];
