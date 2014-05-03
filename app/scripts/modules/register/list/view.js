@@ -1,6 +1,7 @@
 'use strict';
 define(['app'], function(App) {
-    App.module('RegisterApp.List.View', function(View, App, Backbone, Marionette) { // , $, _
+    App.module('RegisterApp.List', function(View, App, Backbone, Marionette) { // , $, _
+        var contextName = 'RegisterApp.List';
         View.Layout = Marionette.Layout.extend({
             template: 'register_layout',
 
@@ -93,8 +94,9 @@ define(['app'], function(App) {
             itemViewContainer: '.register_list',
 
             initialize: function() {
+                App.log('init called', contextName, 1);
                 this.listenTo(this.collection, 'reset', function() {
-                    App.log('reset called', 'register list view', 1);
+                    App.log('reset called', contextName, 1);
                     this.appendHtml = function(collectionView, itemView) { //, index) {
                         collectionView.$el.append(itemView.el);
                     };
@@ -102,7 +104,7 @@ define(['app'], function(App) {
             },
 
             onCompositeCollectionRendered: function() {
-                App.log('rendered called', 'register list view', 1);
+                App.log('rendered called', contextName, 1);
                 this.appendHtml = function(collectionView, itemView) { //, index) {
                     collectionView.$el.prepend(itemView.el);
                 };
@@ -110,5 +112,5 @@ define(['app'], function(App) {
         });
     });
 
-    return App.RegisterApp.List.View;
+//    return App.RegisterApp.List.View;
 });

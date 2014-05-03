@@ -1,5 +1,5 @@
 'use strict';
-define(['app', 'register_list_view'], function(App, View) {
+define(['app', 'list/view'], function(App, View) {
     App.module('RegisterApp.List', function (List, App, Backbone, Marionette, $) { // , _
         List.Controller = {
             listRegister: function() {

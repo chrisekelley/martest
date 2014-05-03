@@ -16,6 +16,21 @@ define(function(require) {
         // }
     });
 
+    /**
+     * Log function.
+     * Pass all messages through here so we can disable for prod
+     */
+    App.log = function(message, domain, level) {
+        if (App.debug < level) {
+            return;
+        }
+        if (typeof message !== 'string') {
+            console.log('Fancy object (' + domain + ')', message);
+        } else {
+            console.log((domain || false ? '(' + domain + ') ' : '') + message);
+        }
+    };
+
     // create a new sub module
     App.module('Routers.RegisterApp', function(RegisterAppRouter, App, Backbone, Marionette) { //, $, _) {
         this.name = 'Routers.RegisterApp';
@@ -62,6 +77,7 @@ define(function(require) {
             });
         });
     });
+
 
     return App.RegisterAppRouter;
 });

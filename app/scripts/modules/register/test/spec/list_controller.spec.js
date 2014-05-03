@@ -4,13 +4,12 @@
 
 define([
         'app',
-        '../list/list_controller',
+        'list/controller'
     ],
 
     function(App) {
 
-        var SOMEMODULE = new App.List.Controller();
-
+        var SOMEMODULE = App.RegisterApp.List.View();
         describe('Examples collection', function() {
 
             it('should exist', function() {
