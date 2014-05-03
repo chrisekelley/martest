@@ -38,7 +38,7 @@ define([
             var SOMEMODULE = null;
             var entities = App.request('register:entities');
             if (entities !== null) {
-                SOMEMODULE = new App.RegisterApp.List.Register({
+                SOMEMODULE = new App.RegisterApp.List.View.Register({
                     collection: entities
                 });
             }
