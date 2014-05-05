@@ -1,5 +1,5 @@
 'use strict';
-define(['app'], function(App) {
+define(['app', 'templates', 'dust'], function(App) {
     App.module('RegisterApp.List.View', function(View, App, Backbone, Marionette) { // , $, _
         var contextName = 'RegisterApp.List.View';
         View.Layout = Marionette.Layout.extend({

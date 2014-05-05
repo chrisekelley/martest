@@ -17,7 +17,7 @@ requirejs.config({
 
         'register_list_view'      : 'modules/register/list/view',
         'register_list_controller': 'modules/register/list/controller',
-        'register_entity':      'modules/register/entities/register',
+        'register_entity':      'modules/register/entities/register'
 
         /**===== yeoman hook =====**/
         /**This above hook is required for Mr.Yeoman, touch not it, nor it's indentation... please. **/

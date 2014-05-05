@@ -4,6 +4,7 @@ define(['app'], function(App) {
         var contextName = 'Entity';
         Entities.Register = Backbone.Model.extend({
             urlRoot: 'register',
+            name: 'Register',
 
             defaults: {
                 name: '',
@@ -117,9 +118,11 @@ define(['app'], function(App) {
         // return API.getRegisterEntity(id);
         // });
 
-        App.reqres.setHandler('images:entity:new', function(id) {
-            App.log('Making new image: ' + id, this.name, 1);
-            return new Entities.Register();
+        App.reqres.setHandler('register:entity:new', function(id) {
+//            App.log('Making new object: ' + id, this.name, 1);
+            var model = new Entities.Register(id);
+            App.log('Made new object: ' + id, model.name, 1);
+            return model;
         });
     });
 

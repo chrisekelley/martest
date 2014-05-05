@@ -9,8 +9,9 @@ define([
 
     function(App) {
 
-        var SOMEMODULE = App.RegisterApp.List.View();
-        describe('Examples collection', function() {
+        var SOMEMODULE = App.RegisterApp.List.Controller.listRegister();
+//        var entities = App.request('register:entities');
+        describe('Controller', function() {
 
             it('should exist', function() {
                 expect(SOMEMODULE).to.exist;

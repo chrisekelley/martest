@@ -1,10 +1,11 @@
 'use strict';
 define(['app', 'list/view'], function(App, View) {
     App.module('RegisterApp.List', function (List, App, Backbone, Marionette, $) { // , _
+        var contextName = 'RegisterApp.List.Controller';
         List.Controller = {
             listRegister: function() {
                 require(['common/views', 'register_entity'], function(CommonViews) {
-
+                    App.log('showing mainRegion', contextName, 1);
                     App.mainRegion.show(new CommonViews.Loading());
 
                     var fetchingRegister = App.request('register:entities');
@@ -42,6 +43,9 @@ define(['app', 'list/view'], function(App, View) {
                     App.mainRegion.show(registerListLayout);
 
                 });
+
+                return 'hi';
+
             }
         };
     });
